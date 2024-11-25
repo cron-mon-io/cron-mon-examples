@@ -10,7 +10,7 @@ Cron Mon requires a PostgreSQL database and a running Keycloak server in order f
 
 This repository provides JSON files that can be used to import realms into Keycloak. Each realm demonstrates a different form of _tenancy_, namely *single-tenancy*, *multi-tenancy* and *'user-tenancy'*. Single and multi tenancy are likely tenant setups developers will have come across before. _User-tenancy_ is ultimately another form of multi-tenancy, only in this setup, every user has their own tenant, compared to the traditional multi-tenancy setup where a single tenant would serve a group of users.
 
-> [!INFO]
+> [!NOTE]
 > There currently isn't a multi-tenant realm, but this is on the TODO list.
 
 ## Compose
