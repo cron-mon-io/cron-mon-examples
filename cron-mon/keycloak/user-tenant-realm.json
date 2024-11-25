@@ -1,6 +1,6 @@
 {
   "id": "4aea1873-7782-40ee-863e-7b3516377dc8",
-  "realm": "cron-mon-io",
+  "realm": "cron-mon-user-tenant",
   "notBefore": 0,
   "defaultSignatureAlgorithm": "RS256",
   "revokeRefreshToken": false,
@@ -48,7 +48,7 @@
     "realm": [
       {
         "id": "0f40e445-4544-49b5-85d6-70503488caae",
-        "name": "default-roles-cron-mon-io",
+        "name": "default-roles-cron-mon-user-tenant",
         "description": "${role_default-roles}",
         "composite": true,
         "composites": {
@@ -335,7 +335,7 @@
   "groups": [],
   "defaultRole": {
     "id": "0f40e445-4544-49b5-85d6-70503488caae",
-    "name": "default-roles-cron-mon-io",
+    "name": "default-roles-cron-mon-user-tenant",
     "description": "${role_default-roles}",
     "composite": true,
     "clientRole": false,
@@ -408,13 +408,13 @@
       "clientId": "account",
       "name": "${client_account}",
       "rootUrl": "${authBaseUrl}",
-      "baseUrl": "/realms/cron-mon-io/account/",
+      "baseUrl": "/realms/cron-mon-user-tenant/account/",
       "surrogateAuthRequired": false,
       "enabled": true,
       "alwaysDisplayInConsole": false,
       "clientAuthenticatorType": "client-secret",
       "redirectUris": [
-        "/realms/cron-mon-io/account/*"
+        "/realms/cron-mon-user-tenant/account/*"
       ],
       "webOrigins": [],
       "notBefore": 0,
@@ -453,13 +453,13 @@
       "clientId": "account-console",
       "name": "${client_account-console}",
       "rootUrl": "${authBaseUrl}",
-      "baseUrl": "/realms/cron-mon-io/account/",
+      "baseUrl": "/realms/cron-mon-user-tenant/account/",
       "surrogateAuthRequired": false,
       "enabled": true,
       "alwaysDisplayInConsole": false,
       "clientAuthenticatorType": "client-secret",
       "redirectUris": [
-        "/realms/cron-mon-io/account/*"
+        "/realms/cron-mon-user-tenant/account/*"
       ],
       "webOrigins": [],
       "notBefore": 0,
@@ -723,13 +723,13 @@
       "clientId": "security-admin-console",
       "name": "${client_security-admin-console}",
       "rootUrl": "${authAdminUrl}",
-      "baseUrl": "/admin/cron-mon-io/console/",
+      "baseUrl": "/admin/cron-mon-user-tenant/console/",
       "surrogateAuthRequired": false,
       "enabled": true,
       "alwaysDisplayInConsole": false,
       "clientAuthenticatorType": "client-secret",
       "redirectUris": [
-        "/admin/cron-mon-io/console/*"
+        "/admin/cron-mon-user-tenant/console/*"
       ],
       "webOrigins": [
         "+"

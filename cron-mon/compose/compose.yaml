@@ -9,7 +9,7 @@ services:
     environment:
       API_HOST: http://cron-mon-api:8000
       KEYCLOAK_URL: http://127.0.0.1:8080
-      KEYCLOAK_REALM: cron-mon-io
+      KEYCLOAK_REALM: cron-mon-user-tenant
       KEYCLOAK_CLIENT_ID: cron-mon
     networks:
       - default
