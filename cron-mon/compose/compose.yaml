@@ -9,7 +9,7 @@ services:
     environment:
       API_HOST: http://cron-mon-api:8000
       KEYCLOAK_URL: http://127.0.0.1:8080
-      KEYCLOAK_REALM: cron-mon-single-tenant
+      KEYCLOAK_REALM: ${REALM}
       KEYCLOAK_CLIENT_ID: cron-mon
     networks:
       - default
@@ -28,7 +28,7 @@ services:
       - 8000:8000
     environment:
       DATABASE_URL: postgres://cron-mon-api:itsasecret@cron-mon-db/cron-mon
-      KEYCLOAK_CERTS_URL: http://cron-mon-keycloak:8080/realms/cron-mon-single-tenant/protocol/openid-connect/certs
+      KEYCLOAK_CERTS_URL: http://cron-mon-keycloak:8080/realms/${REALM}/protocol/openid-connect/certs
       JSON_LOGGING: true
     networks:
       - default

@@ -1,5 +1,14 @@
-run:
-	docker-compose up api app monitor
+run: run-single-tenant
+
+run-single-tenant:
+	REALM=cron-mon-single-tenant $(_run)
+
+run-user-tenant:
+	REALM=cron-mon-user-tenant $(_run)
 
 purge-volumes:
 	docker compose down app db && docker volume rm cron-mon-postgres-data cron-mon-caddy-data
+
+define _run
+	docker compose up api app monitor
+endef
