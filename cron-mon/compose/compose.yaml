@@ -1,6 +1,6 @@
 services:
   app:
-    image: ghcr.io/cron-mon-io/cron-mon-app:latest
+    image: ghcr.io/cron-mon-io/cron-mon-app:0.1.0
     container_name: cron-mon-app
     ports:
       - 3000:3000
@@ -16,14 +16,14 @@ services:
       - cron-mon-network
 
   api:
-    image: ghcr.io/cron-mon-io/cron-mon:latest
+    image: ghcr.io/cron-mon-io/cron-mon:0.2.0
     container_name: cron-mon-api
     depends_on:
       db:
         condition: service_healthy
       keycloak:
         condition: service_healthy
-    command: ./api
+    command: ./cron-mon api
     ports:
       - 8000:8000
     environment:
@@ -35,12 +35,12 @@ services:
       - cron-mon-network
 
   monitor:
-    image: ghcr.io/cron-mon-io/cron-mon:latest
+    image: ghcr.io/cron-mon-io/cron-mon:0.2.0
     container_name: cron-mon-monitor
     depends_on:
       db:
         condition: service_healthy
-    command: ./monitor
+    command: ./cron-mon monitor
     environment:
       DATABASE_URL: postgres://cron-mon-api:itsasecret@cron-mon-db/cron-mon
       JSON_LOGGING: true
