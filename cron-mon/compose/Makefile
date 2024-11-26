@@ -1,3 +1,11 @@
+install:
+	docker compose pull && \
+		docker compose run --rm api ./cron-mon create-monitor \
+			--name "Example Monitor" \
+			--tenant cron-mon \
+			--expected 60 \
+			--grace 10
+
 run: run-single-tenant
 
 run-single-tenant:
