@@ -13,7 +13,7 @@ services:
       KEYCLOAK_CLIENT_ID: cron-mon
     networks:
       - default
-      - cron-mon-network
+      - cron-mon-example-network
 
   api:
     image: ghcr.io/cron-mon-io/cron-mon:0.2.1
@@ -32,7 +32,7 @@ services:
       JSON_LOGGING: true
     networks:
       - default
-      - cron-mon-network
+      - cron-mon-example-network
 
   monitor:
     image: ghcr.io/cron-mon-io/cron-mon:0.2.0
@@ -46,7 +46,7 @@ services:
       JSON_LOGGING: true
     networks:
       - default
-      - cron-mon-network
+      - cron-mon-example-network
 
   db:
     container_name: cron-mon-db
@@ -61,7 +61,7 @@ services:
       - postgres-data:/var/lib/postgresql/data
     networks:
       - default
-      - cron-mon-network
+      - cron-mon-example-network
     healthcheck:
       test: [ "CMD-SHELL", "pg_isready -U postgres" ]
       interval: 5s
@@ -82,7 +82,7 @@ services:
       - ../keycloak:/opt/keycloak/data/import
     networks:
       - default
-      - cron-mon-network
+      - cron-mon-example-network
     healthcheck:
       test: [
         "CMD-SHELL",
@@ -102,9 +102,9 @@ services:
     command: ["start-dev", "--import-realm"]
 
 networks:
-  cron-mon-network:
+  cron-mon-example-network:
     driver: bridge
-    name: cron-mon-network
+    name: cron-mon-example-network
 
 volumes:
   caddy-data:
