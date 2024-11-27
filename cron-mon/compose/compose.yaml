@@ -16,7 +16,7 @@ services:
       - cron-mon-network
 
   api:
-    image: ghcr.io/cron-mon-io/cron-mon:0.2.0
+    image: ghcr.io/cron-mon-io/cron-mon:0.2.1
     container_name: cron-mon-api
     depends_on:
       db:
